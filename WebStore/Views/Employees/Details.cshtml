@@ -1,0 +1,22 @@
+﻿@model EmployeeView
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    Карточка сотрудника:
+    <br>
+    <br>
+<tr>
+    <td>ФИО: @Model.FirstName @Model.SurName @Model.Patronymic</td><br>
+    <td>Возраст: @Model.Age</td><br>
+    <td>Департамент: @Model.Departament</td><br>
+</tr>
+<br>
+<td>@Html.ActionLink("Главная", "Index")</td>
+</body>
+</html>

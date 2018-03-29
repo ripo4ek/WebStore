@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section topsection{
+    @await Html.PartialAsync("Partial/_Slider")
+}
+
+@await Html.PartialAsync("Partial/_FeaturesItems")
+@await Html.PartialAsync("Partial/_CategoryTab")
+@await Html.PartialAsync("Partial/_RecommendedItems")
+

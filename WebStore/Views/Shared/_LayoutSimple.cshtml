@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+@*@section topsection{
+        @RenderSection("topsection", false) --без этого работает, почему так?
+
+    }*@ -
+
+@section scripts{
+    @RenderSection("scripts", false)
+
+}
+@section styles{
+    @RenderSection("styles", false)
+
+}
+
+@await Html.PartialAsync("Partial/_Header")
+@RenderSection("topsection", false)
+
+<section>
+    <div class="container">
+        @RenderBody()
+    </div>
+</section>
+@await Html.PartialAsync("Partial/_Footer")
+
+

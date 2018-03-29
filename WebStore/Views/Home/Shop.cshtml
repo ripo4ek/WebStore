@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+}
+
+@section topsection
+{
+    <section id="advertisement">
+        <div class="container">
+            <img src="~/images/shop/advertisement.jpg" alt="" />
+        </div>
+    </section>
+}
+
+@await Html.PartialAsync("Partial/_FeaturesItems")
+
