@@ -47,6 +47,11 @@ namespace WebStore.Controllers
                 return View();
                 
             }
+            if (model.Age < 18 && model.Age > 75)
+            {
+                ModelState.AddModelError("Age", "Ошибка возраста!");
+            }
+
             if (model.Id > 0)
             {
                 var dbItem = _employeesData.GetById(model.Id);

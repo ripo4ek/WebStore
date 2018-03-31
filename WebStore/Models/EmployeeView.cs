@@ -11,24 +11,24 @@ namespace WebStore.Models
         [Required]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Не указано имя")]
-        [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Имя является обязательным")]
+        [Display(Name = "Имя")]
+        [StringLength(maximumLength: 200, MinimumLength = 2, ErrorMessage = "В имени должно быть не менее 2х и не более 200 символов")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Не указана фамилия")]
-        [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Фамилия является обязательной")]
+        [Display(Name = "Фамилия")]
         public string SurName { get; set; }
 
-        [Required(ErrorMessage = "Не указано отчество")]
-        [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$")]
+        [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
 
-        [Required(ErrorMessage = "Не указан возраст")]
-        [Range(18, 100)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Возраст является обязательным")]
+        [Display(Name = "Возраст")]
         public int Age { get; set; }
 
-        [Required(ErrorMessage = "Не указано место работы")]
-        [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Должность является обязательной")]
+        [Display(Name = "Должность")]
         public string Departament { get; set; }
     }
 }
