@@ -30,7 +30,7 @@ namespace WebStore.Controllers
             if (id.HasValue)
             {
                 model = _employeesData.GetById(id.Value);
-                if (ReferenceEquals(model, null))
+                if (model is null)
                     return NotFound();// возвращаем результат 404 Not Found
             }
             else
@@ -55,7 +55,7 @@ namespace WebStore.Controllers
             if (model.Id > 0)
             {
                 var dbItem = _employeesData.GetById(model.Id);
-                if (ReferenceEquals(dbItem, null))
+                if (dbItem is null)
                     return NotFound();
                 dbItem.FirstName = model.FirstName;
                 dbItem.SurName = model.SurName;

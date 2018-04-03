@@ -19,6 +19,7 @@ namespace WebStore.ViewComponents
         {
             var brands = GetBrands();
             return View(brands);
+   
         }
         private IEnumerable<BrandViewModel> GetBrands()
         {
